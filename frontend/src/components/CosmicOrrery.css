@@ -1,0 +1,49 @@
+.orrery-card {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a237e 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    overflow: hidden;
+}
+
+.orrery-card .card-header {
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: bold;
+}
+
+.orrery-card .card-body {
+    padding: 1.5rem;
+}
+
+.orrery-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    pointer-events: none;
+    z-index: 1000;
+    border: 1px solid #4fc3f7;
+}
+
+.orrery-card svg {
+    background: radial-gradient(ellipse at center, #1a237e 0%, #0a0e27 100%);
+    border-radius: 10px;
+    cursor: grab;
+}
+
+.orrery-card svg:active {
+    cursor: grabbing;
+}
+
+.orrery-card .form-range {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.orrery-card .form-range::-webkit-slider-thumb {
+    background: #4fc3f7;
+}
