@@ -1,4 +1,5 @@
 // frontend/src/components/Dashboard.js
+import CosmicOrrery from './CosmicOrrery';
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Alert, Spinner, Button } from 'react-bootstrap';
 import CorrelationChart from './CorrelationChart';
@@ -92,15 +93,23 @@ const Dashboard = () => {
       );
     }
 
-    switch (activeTab) {
-      case 'correlations':
-        return (
-          <CorrelationChart 
-            correlations={correlations} 
-            cosmicEvents={cosmicEvents}
-            evolutionaryEvents={evolutionaryEvents}
-          />
-        );
+   switch (activeTab) {
+     case 'correlations':
+       return <CorrelationChart ... />;
+     case 'timeline':
+       return <Timeline ... />;
+     case 'explorer':
+       return <DataExplorer ... />;
+     case 'orrery': // <-- NUEVA PESTAÑA
+       return <CosmicOrrery 
+         cosmicEvents={cosmicEvents}
+         evolutionaryEvents={evolutionaryEvents}
+         correlations={correlations}
+       />;
+     default:
+       return null;
+   }
+      
       case 'timeline':
         return (
           <Timeline 
@@ -202,6 +211,13 @@ const Dashboard = () => {
               className={`btn ${activeTab === 'timeline' ? 'btn-primary' : 'btn-outline-primary'}`}
               onClick={() => setActiveTab('timeline')}
             >
+            <button 
+              type="button" 
+              className={`btn ${activeTab === 'orrery' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => setActiveTab('orrery')}
+            >
+              Orrery Cósmico
+            </button>
               Timeline
             </button>
             <button 
